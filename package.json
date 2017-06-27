@@ -1,6 +1,6 @@
 {
   "name": "coppice-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "build": "webpack --config config/webpack.config.prod.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Brandon Chartier",
+  "license": "UNLICENSED",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -23,6 +23,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "coppice": "^0.10.0"
+    "coppice": "^0.11.0",
+    "ramda": "^0.24.1"
   }
 }
