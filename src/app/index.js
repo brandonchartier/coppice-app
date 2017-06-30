@@ -12,12 +12,15 @@ const counter = program({
     dec: _ => count(r.dec),
     add: n => count(r.add(n))
   },
-  view: msg => state => (
+  action: {
+    wait: (ctx, n) => setTimeout(() => ctx.commit('add', n), 1000)
+  },
+  view: ctx => state => (
     <div>
       <h1>{state.count}</h1>
-      <button onclick={msg.inc}>+1</button>
-      <button onclick={msg.dec} disabled={state.count <= 0}>-1</button>
-      <button onclick={_ => msg.add(5)}>+5</button>
+      <button onclick={ctx.commit('inc')}>+</button>
+      <button onclick={ctx.commit('dec')} disabled={state.count <= 0}>-</button>
+      <button onclick={_ => ctx.dispatch('wait', 5)}>+5</button>
     </div>
   )
 });
